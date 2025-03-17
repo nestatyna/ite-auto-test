@@ -1,0 +1,23 @@
+{
+  "11728": {
+    "name": "svchost.exe",
+    "path": "C:\\Windows\\System32\\svchost.exe",
+    "user": "NT AUTHORITY\\LOCAL SERVICE",
+    "createTime": 1627614234175,
+    "session": 0
+  },
+  "11820": {
+    "name": "slack.exe",
+    "path": "C:\\Users\\lei\\AppData\\Local\\slack\\app-4.18.0\\slack.exe",
+    "user": "WSPAVELLK\\lei",
+    "createTime": 1627607459958,
+    "session": 2
+  },
+  "11940": {
+    "name": "chrome.exe",
+    "path": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "user": "WSPAVELLK\\lei",
+    "createTime": 1627618726418,
+    "session": 2
+  }
+}

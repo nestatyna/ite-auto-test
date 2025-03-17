@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+version '0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(
+            'org.testng:testng:7.7.1',
+            'io.rest-assured:rest-assured:5.0.0',
+            'com.fasterxml.jackson.core:jackson-databind:2.13.4.2',
+            'org.projectlombok:lombok:1.18.30',
+            'org.testng:testng:7.7.0',
+            'io.rest-assured:rest-assured:5.0.0',
+            'com.fasterxml.jackson.core:jackson-databind:2.13.4.2',
+            'io.qameta.allure:allure-testng:2.21.0',
+            'io.qameta.allure:allure-rest-assured:2.21.0',
+            'com.github.tomakehurst:wiremock-jre8:2.35.1'
+    )
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+
+test {
+    useTestNG()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
