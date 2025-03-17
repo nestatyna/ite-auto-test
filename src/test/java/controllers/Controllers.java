@@ -26,7 +26,7 @@ public class Controllers extends AbstractController {
                 .log().uri()
                 .log().headers()
                 .when()
-                .get("/test")
+                .get("/tests")
                 .then()
                 .extract().response();
     }

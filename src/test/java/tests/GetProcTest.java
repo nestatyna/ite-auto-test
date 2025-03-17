@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 import base.TestBase;
 import dto.ProcInfoResponse;

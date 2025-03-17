@@ -1,10 +1,9 @@
-package test;
+package tests;
 
 import base.TestBase;
 import dto.TestResponse;
 import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static base.CustomLogger.step;
