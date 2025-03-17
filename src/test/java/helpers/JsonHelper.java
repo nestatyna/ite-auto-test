@@ -33,33 +33,7 @@ public class JsonHelper {
         }
     }
 
-    public static <T> T parseJson(String jsonString, Class<T> clazz) {
-        try {
-            String cleanedJson = jsonString.replaceAll("[\\p{C}]", "");
-
-            if (!isValidJson(cleanedJson)) {
-                throw new RuntimeException("Некорректный JSON: " + cleanedJson);
-            }
-
-            return objectMapper.readValue(cleanedJson, clazz);
-
-        } catch (UnrecognizedPropertyException e) {
-            error("Ошибка: " + e.getOriginalMessage());
-
-            try {
-                ObjectMapper relaxedMapper = new ObjectMapper()
-                        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                return relaxedMapper.readValue(jsonString, clazz);
-            } catch (IOException ex) {
-                throw new RuntimeException("Ошибка десериализации JSON после игнорирования неизвестных полей", ex);
-            }
-
-        } catch (IOException e) {
-            throw new RuntimeException("Ошибка десериализации JSON в " + clazz.getSimpleName(), e);
-        }
-    }
-
-    public static <T> List<T> parseJsonList(String jsonString, Class<T> clazz) {
+    public static <T> List<T> parseJsonToList(String jsonString, Class<T> clazz) {
         try {
             if (!isValidArrayJson(jsonString)) {
                 throw new RuntimeException("Некорректный JSON: " + jsonString);

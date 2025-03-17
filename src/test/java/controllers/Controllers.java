@@ -33,7 +33,7 @@ public class Controllers extends AbstractController {
 
     public static List<SoftwareResponse> getSoftware() {
         Response response = isSuccess(getSoftwareRequest(), 200);
-        return JsonHelper.parseJsonList(response.asString(), SoftwareResponse.class);
+        return JsonHelper.parseJsonToList(response.asString(), SoftwareResponse.class);
     }
 
     public static Response getSoftwareRequest() {
@@ -51,7 +51,7 @@ public class Controllers extends AbstractController {
 
     public static List<UsersResponse> getUsers() {
         Response response = isSuccess(getUsersRequest(), 200);
-        return JsonHelper.parseJsonList(response.asString(), UsersResponse.class);
+        return JsonHelper.parseJsonToList(response.asString(), UsersResponse.class);
     }
 
     public static Response getUsersRequest() {
@@ -69,7 +69,7 @@ public class Controllers extends AbstractController {
 
     public static CheckV2Response getCheckV2() {
         Response response = isSuccess(getCheckV2Request(), 200);
-        return JsonHelper.parseJson(response.asString(), CheckV2Response.class);
+        return response.as(CheckV2Response.class);
     }
 
     public static Response getCheckV2Request() {
@@ -87,7 +87,7 @@ public class Controllers extends AbstractController {
 
     public static CheckV1Response getCheckV1() {
         Response response = isSuccess(getCheckV1Request(), 200);
-        return JsonHelper.parseJson(response.asString(), CheckV1Response.class);
+        return response.as(CheckV1Response.class);
     }
 
     public static Response getCheckV1Request() {
@@ -123,7 +123,7 @@ public class Controllers extends AbstractController {
 
     public static List<SessionResponse> getSessions() {
         Response response = isSuccess(getSessionsRequest(), 200);
-        return JsonHelper.parseJsonList(response.asString(), SessionResponse.class);
+        return JsonHelper.parseJsonToList(response.asString(), SessionResponse.class);
     }
 
     public static Response getSessionsRequest() {
